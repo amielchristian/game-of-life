@@ -78,7 +78,8 @@ export function App() {
     <>
       {/* <pre>{universeString}</pre> */}
       <canvas ref={canvasRef}></canvas>
-      <div>{count}</div>
+      <h1>{count}</h1>
+      <h4>More features to come!</h4>
     </>
   );
 }
