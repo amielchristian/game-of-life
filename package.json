@@ -4,6 +4,7 @@
   "main": "game-of-life-web",
   "author": "Amiel Christian Mala-ay <amielchristian.malaay.cics@ust.edu.ph>",
   "license": "MIT",
+  "private": true,
   "workspaces": [
     "game-of-life-web/*"
   ],
