@@ -1,0 +1,16 @@
+{
+  "name": "game-of-life",
+  "version": "1.0.0",
+  "main": "game-of-life-web",
+  "author": "Amiel Christian Mala-ay <amielchristian.malaay.cics@ust.edu.ph>",
+  "license": "MIT",
+  "workspaces": [
+    "game-of-life-web/*"
+  ],
+  "scripts": {
+    "dev": "yarn --cwd game-of-life-web dev",
+    "build": "yarn --cwd game-of-life-web build",
+    "preview": "yarn --cwd game-of-life-web preview",
+    "compile": "wasm-pack build --out-dir game-of-life-web/src/pkg"
+  }
+}
