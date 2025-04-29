@@ -9,9 +9,6 @@ const height = universe.height();
 const width = universe.width();
 export function App() {
   const [count, setCount] = useState<number>(0);
-  const [universeString, setUniverseString] = useState<string>(
-    universe.render()
-  );
   const [cells, setCells] = useState(
     new Uint8Array(memory.buffer, universe.cells(), width * height)
   );
