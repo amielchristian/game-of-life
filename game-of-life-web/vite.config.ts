@@ -5,6 +5,6 @@ import topLevelAwait from 'vite-plugin-top-level-await';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/<REPO>/',
+  base: '/game-of-life/',
   plugins: [preact(), wasm(), topLevelAwait()],
 });
