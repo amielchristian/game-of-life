@@ -67,17 +67,14 @@ impl Universe {
                     (otherwise, _) => otherwise,
                 };
 
-                next[idx] = next_cell
+                next[idx] = next_cell;
             }
         }
-        console_log!("Ticked!");
 
         self.cells = next;
     }
 
     pub fn new() -> Universe {
-        console_log!("Created universe!");
-
         let width = 64;
         let height = 64;
 
@@ -101,17 +98,30 @@ impl Universe {
     pub fn render(&self) -> String {
         self.to_string()
     }
+
+    pub fn width(&self) -> u32 {
+        self.width
+    }
+
+    pub fn height(&self) -> u32 {
+        self.height
+    }
+
+    pub fn cells(&self) -> *const Cell {
+        self.cells.as_ptr()
+    }
 }
 
 impl fmt::Display for Universe {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         for line in self.cells.as_slice().chunks(self.width as usize) {
             for &cell in line {
-                let symbol = if Cell::Dead == cell { '0' } else { '1' };
+                let symbol = if cell == Cell::Dead { '◻' } else { '◼' };
                 write!(f, "{}", symbol)?;
             }
             write!(f, "\n")?;
         }
+
         Ok(())
     }
 }
